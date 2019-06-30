@@ -1,0 +1,24 @@
+@import './colors.css';
+@import './navbar.css';
+@import './figure.css';
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+}
+
+.content-wrapper {
+  width: 80%;
+  max-width: 1200px;
+  margin: 2rem auto;
+
+}
+
+.grid-container {
+  margin: 1rem auto;
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}

@@ -1,0 +1,28 @@
+.person-container {
+  position: relative;
+  width: 200px;
+  height: 220px;
+  background-color: var(--third-color);
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 6px 10px 5px 0px rgba(156, 156, 156, 1);
+}
+
+.person-container .photo {
+  margin: 1rem;
+  border-radius: 3px;
+}
+
+.person-container .flag {
+  position: absolute;
+  top: 110px;
+  right: 16px;
+}
+
+.person-container .name {
+  color: var(--secondary-color);
+  font-family: PT Sans;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  text-transform: capitalize;
+}
