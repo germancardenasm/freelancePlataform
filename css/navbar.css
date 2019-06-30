@@ -1,3 +1,7 @@
+.navbar {
+  padding: 4px 25px;
+}
+
 .navbar .navbar-brand {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: bold;

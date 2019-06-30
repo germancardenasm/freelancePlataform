@@ -36,7 +36,23 @@ const addHomeListeners = () => {
 };
 
 const loadMorePersons = async () => {
-  if (window.scrollY > gridContainer.clientHeight / 2 && !toogle) {
+  let wrapper = document.getElementById("content_wrapper");
+  console.log(
+    "window.innerHeight : ",
+    window.innerHeight,
+    " + ",
+    "window.scrollY : ",
+    window.scrollY,
+    " = ",
+    window.innerHeight + window.scrollY,
+
+    "....wrapper.scrollHeight: ",
+    wrapper.scrollHeight
+  );
+  if (
+    window.innerHeight + window.scrollY > wrapper.scrollHeight * 0.5 &&
+    !toogle
+  ) {
     toogle = true;
     nextFigureId = mixins.renderPeoleFigures(
       QTY_HOME,
