@@ -1,6 +1,7 @@
 import config from "./config.js";
 import mixins from "./mixins.js";
 /* import mixins as _ from "./mixins.js"; */
+
 const API_URL = config.API_URL;
 const QTY_HOME = config.QTY_HOME;
 const gridContainer = mixins.getById("grid-container");

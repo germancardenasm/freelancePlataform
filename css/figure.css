@@ -1,11 +1,21 @@
 .person-container {
   position: relative;
-  width: 200px;
+  color: var(--secondary-color);
+  width: 180px;
   height: 220px;
+  margin: 0.5rem;
   background-color: var(--third-color);
+  transition: background 0.3s ease;
   text-align: center;
   border-radius: 5px;
   box-shadow: 6px 10px 5px 0px rgba(156, 156, 156, 1);
+  cursor: pointer;
+}
+
+.person-container:hover {
+  background-color: var(--secondary-color);
+  color: white;
+  box-shadow: 8px 12px 7px 0px rgba(156, 156, 156, 1);
 }
 
 .person-container .photo {
@@ -20,7 +30,7 @@
 }
 
 .person-container .name {
-  color: var(--secondary-color);
+
   font-family: PT Sans;
   font-size: 1.1rem;
   margin-top: 1rem;
