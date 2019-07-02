@@ -5,7 +5,7 @@ const home = {
     let view = `
       <article>
         <h1 class="main-title">Top Developer Freelancers</h1>
-        <blockquote class="blockquote px-5 mt-4  text-left">
+        <blockquote class="blockquote px-1 mt-4  text-left">
             <p class="mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 

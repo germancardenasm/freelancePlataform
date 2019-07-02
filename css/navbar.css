@@ -2,17 +2,26 @@
   padding: 4px 25px;
 }
 
-.navbar .navbar-brand {
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-weight: bold;
+
+.navbar .navbar-brand.logo {
   font-size: 2rem;
-  margin-left: 1rem;
-  margin-right: 3rem;
+  margin-right: 1rem;
 }
 
 .navbar .navbar-brand>img {
   width: 60px;
 }
+
+.navbar .navbar-brand {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-right: 3rem;
+}
+
+
+
+
 
 .navbar .navbar-toggler {
   margin-right: 0.5rem;
@@ -21,6 +30,7 @@
 .navbar .nav-link {
   font-family: 'PT Sans', sans-serif;
   font-size: 1.3rem;
+  padding-right: 1rem;
 }
 
 .form-control-sm {
@@ -38,4 +48,18 @@
 .navbar-dark .navbar-nav .show>.nav-link {
   color: var(--secondary-color);
 
+}
+
+
+@media (min-width: 576px) {
+  .form-inline .form-control {
+    width: 150px;
+  }
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 1.5rem;
+    padding-left: .5rem;
+  }
 }

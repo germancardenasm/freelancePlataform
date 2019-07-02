@@ -4,6 +4,7 @@
   width: 180px;
   height: 220px;
   margin: 0.5rem;
+  margin-bottom: 1rem;
   background-color: var(--third-color);
   transition: background 0.3s ease;
   text-align: center;
