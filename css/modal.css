@@ -1,0 +1,48 @@
+.modal .modal-title {
+  text-transform: capitalize;
+  font-size: 2rem;
+}
+
+.modal .modal_images {
+  position: relative;
+  padding-bottom: 2rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.modal .modal-photo {
+  border-radius: .3rem;
+  margin-top: 10px;
+}
+
+.modal-flag {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.modal .table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+.modal .table-label {
+  width: 40%;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: var(--secondary-color);
+}
+
+.modal .info {
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.modal .modal-footer {
+  border-top: none;
+  padding: 2rem 13%;
+
+
+}

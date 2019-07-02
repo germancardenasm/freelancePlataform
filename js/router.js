@@ -1,14 +1,12 @@
 import navBar from "../components/navBar.js";
 import rootView from "../pages/rootView.js";
 import homeView from "../pages/homeView.js";
-import charactersView from "../pages/charactersView.js";
 import detailView from "../pages/detailView.js";
 import mixins from "./mixins.js";
 
 const routes = {
   "/": rootView,
   "/home": homeView,
-  "/characters": charactersView,
   "/detail": detailView
 };
 

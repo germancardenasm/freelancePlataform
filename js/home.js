@@ -1,5 +1,6 @@
 import config from "./config.js";
 import mixins from "./mixins.js";
+import { redirectToDetail } from "./detail.js";
 /* import mixins as _ from "./mixins.js"; */
 
 const API_URL = config.API_URL;
@@ -35,7 +36,7 @@ const setNewFiguresInfo = async persons => {
 
 const addHomeListeners = () => {
   const gridContainer = mixins.getById("grid-container");
-  gridContainer.addEventListener("click", () => console.log("click"));
+  gridContainer.addEventListener("click", redirectToDetail);
   window.addEventListener("scroll", loadMorePersons);
 };
 

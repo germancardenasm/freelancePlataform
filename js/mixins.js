@@ -2,33 +2,6 @@ import config from "./config.js";
 const API_URL = config.API_URL;
 
 const mixins = {
-  initStorage: function() {
-    return new Promise((resolve, reject) => {
-      if (this.storageIsInit()) return resolve();
-
-      this.reqDataServer(API_URL).then(receivedData => {
-        const apiConf = {
-          QTY_HOME_CHARACTERS: 3,
-          TOTAL_CHARACTERS: receivedData.info.count,
-          TOTAL_PAGES: receivedData.info.pages,
-          charactersUrl: API_URL,
-          nextPage: receivedData.info.next,
-          prevPage: receivedData.info.prev
-        };
-        const paginatorConfig = {
-          activePaginatorPage: 1,
-          previosActivePaginatorPage: 1
-        };
-        sessionStorage.setItem("apiConf", JSON.stringify(apiConf));
-        sessionStorage.setItem(
-          "paginatorConfig",
-          JSON.stringify(paginatorConfig)
-        );
-        resolve();
-      });
-    });
-  },
-
   reqDataServer: function(url, characterId = "") {
     return fetch(url + characterId)
       .then(function(response) {
@@ -49,8 +22,8 @@ const mixins = {
       const container = document.createElement("figure");
       container.setAttribute("id", i + lastFigureId);
       container.classList.add("person-container");
-      const img = this.createImg("photo", "../img/dummyImg.png");
-      const flag = this.createImg("flag", "../img/dummyFlag.png");
+      const img = this.createImgTag("photo", "../img/dummyImg.png");
+      const flag = this.createImgTag("flag", "../img/dummyFlag.png");
       flag.src = "../img/dummyflag.png";
       flag.alt = "dummy image";
       flag.classList.add("flag");
@@ -65,7 +38,7 @@ const mixins = {
     return parseInt(page.lastChild.id) + 1;
   },
 
-  createImg: function(classAsigned, src) {
+  createImgTag: function(classAsigned, src) {
     const img = document.createElement("img");
     img.src = src;
     img.alt = "";
@@ -80,37 +53,6 @@ const mixins = {
   saveCharacters: function(serverInfo = {}) {
     sessionStorage.setItem("charactersObject", JSON.stringify(serverInfo));
   },
-
-  saveConfig: function(receivedData) {
-    const apiConf = {
-      QTY_HOME_CHARACTERS: 3,
-      TOTAL_CHARACTERS: receivedData.count,
-      TOTAL_PAGES: receivedData.pages,
-      charactersUrl: API_URL,
-      nextPage: receivedData.next,
-      prevPage: receivedData.prev
-    };
-    sessionStorage.setItem("apiConf", JSON.stringify(apiConf));
-  },
-
-  /* renderPageWhendataAvailable: function(
-    promise,
-    section = "characters-container-page"
-  ) {
-    const container = this.getById(section);
-    promise.then(receivedData => {
-      const qtyOfCharactersReceived = receivedData.results.length;
-      const qtyCharacterOnScreen = container.childElementCount;
-      if (qtyCharacterOnScreen != qtyOfCharactersReceived) {
-        this.removeAllCharacters(section);
-        this.renderPeoleFigures(receivedData.results.length, section);
-      }
-      this.renderCharacters(receivedData.results, section);
-      window.scrollTo(0, 0);
-      this.saveCharacters(receivedData.results);
-      if (receivedData.info) this.saveConfig(receivedData.info);
-    });
-  }, */
 
   removeAllCharacters: function(section = "home-page") {
     var myNode = this.getById(section);

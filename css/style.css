@@ -1,6 +1,7 @@
 @import './colors.css';
 @import './navbar.css';
 @import './figure.css';
+@import './modal.css';
 
 body {
   position: relative;

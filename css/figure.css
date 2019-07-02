@@ -7,6 +7,7 @@
   background-color: var(--third-color);
   transition: background 0.3s ease;
   text-align: center;
+  border: 1px solid transparent;
   border-radius: 5px;
   box-shadow: 6px 10px 5px 0px rgba(156, 156, 156, 1);
   cursor: pointer;
@@ -14,6 +15,7 @@
 
 .person-container:hover {
   background-color: var(--secondary-color);
+  border: 1px solid var(--third-color);
   color: white;
   box-shadow: 8px 12px 7px 0px rgba(156, 156, 156, 1);
 }
