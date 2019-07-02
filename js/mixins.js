@@ -93,7 +93,7 @@ const mixins = {
     sessionStorage.setItem("apiConf", JSON.stringify(apiConf));
   },
 
-  renderPageWhendataAvailable: function(
+  /* renderPageWhendataAvailable: function(
     promise,
     section = "characters-container-page"
   ) {
@@ -110,7 +110,7 @@ const mixins = {
       this.saveCharacters(receivedData.results);
       if (receivedData.info) this.saveConfig(receivedData.info);
     });
-  },
+  }, */
 
   removeAllCharacters: function(section = "home-page") {
     var myNode = this.getById(section);
