@@ -15,7 +15,9 @@ function modal(person) {
           <img class='modal-photo' src=${
             person.picture.large
           } alt="" class="photo">
-          <img class='modal-flag' src='https://www.countryflags.io/NO/shiny/64.png' alt="" class="photo">
+          <img class='modal-flag' src='https://www.countryflags.io/${
+            person.nat
+          }/shiny/64.png' alt="" class="photo">
         </div>
         <table id="person-info-table" class="table"></table>
       </div>
