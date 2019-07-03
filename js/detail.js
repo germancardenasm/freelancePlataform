@@ -35,13 +35,29 @@ async function renderDetail() {
   console.log("Person Id to show detail: ", personIdtoShowDetail);
   let personList = await JSON.parse(sessionStorage.getItem("charactersObject"));
   let person = personList[personIdtoShowDetail];
+  positionFigureVerticalyCentered(personIdtoShowDetail);
   modal_wrapper.innerHTML = modal(person);
-  setModalTable(person);
-  $("#detail_modal").modal("show");
+  setTimeout(() => {
+    setModalTable(person);
+    $("#detail_modal").modal("show");
+  }, 500);
 
-  /*   renderCharacters(characterToRender, "detail-container-page");
-   */
+  //renderCharacters(characterToRender, "detail-container-page");
 }
+
+const positionFigureVerticalyCentered = id => {
+  const figure = mixins.getById(id);
+  let viewPortHeight =
+    window.innerHeight || document.documentElement.clientHeight;
+  let figureRectangle = figure.getBoundingClientRect();
+  let destinationPoint = viewPortHeight / 2 - figureRectangle.height / 2;
+  let distance = figureRectangle.y - destinationPoint;
+  window.scrollBy({
+    top: distance,
+    left: 0,
+    behavior: "smooth"
+  });
+};
 
 const setModalTable = async person => {
   const table = mixins.getById("person-info-table");
