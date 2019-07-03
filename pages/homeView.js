@@ -3,7 +3,7 @@ import { renderHome } from "../js/home.js";
 const home = {
   render: async () => {
     let view = `
-      <article>
+      <article id="home" >
         <h1 class="main-title">Top Developer Freelancers</h1>
         <blockquote class="blockquote px-1 mt-4  text-left">
             <p class="mb-0">

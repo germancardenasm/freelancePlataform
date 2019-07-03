@@ -1,7 +1,7 @@
 const navBar = {
   render: async () => {
     let view = `
-      <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav id = "navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand logo" href="#">
           <img src="./img/logo.png" class="d-inline-block align-top" alt="" />
         </a>

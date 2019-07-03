@@ -9,10 +9,25 @@ body {
   font-size: 14px;
   width: 100%;
   height: 100%;
+
+}
+
+.blur {
+  -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px);
 }
 
 .content-wrapper {
   padding-top: 120px;
+  transition: filter, ease-out, 0.5s;
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
 }
 
 .page-wrapper .content-wrapper .main-title {

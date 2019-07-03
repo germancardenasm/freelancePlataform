@@ -37,13 +37,27 @@ async function renderDetail() {
   let person = personList[personIdtoShowDetail];
   positionFigureVerticalyCentered(personIdtoShowDetail);
   modal_wrapper.innerHTML = modal(person);
+  addModalEventListener();
   setTimeout(() => {
+    const navbar = mixins.getById("navbar");
+    const article = mixins.getById("home");
+    navbar.classList.add("opacity-none");
+    article.classList.add("blur");
     setModalTable(person);
     $("#detail_modal").modal("show");
   }, 500);
 
   //renderCharacters(characterToRender, "detail-container-page");
 }
+
+const addModalEventListener = () => {
+  $("#detail_modal").on("hidden.bs.modal", function(e) {
+    const navbar = mixins.getById("navbar");
+    const article = mixins.getById("home");
+    navbar.classList.remove("opacity-none");
+    article.classList.remove("blur");
+  });
+};
 
 const positionFigureVerticalyCentered = id => {
   const figure = mixins.getById(id);
@@ -65,6 +79,7 @@ const setModalTable = async person => {
   const labels = {
     gender: person.gender,
     age: person.dob.age,
+    city: person.location.city,
     country: country.name
   };
 
@@ -78,5 +93,12 @@ const setModalTable = async person => {
     cellCharacterInfo.innerHTML = labels[element];
   });
 };
+
+/* $("#myModal").on("hidden.bs.modal", function(e) {
+  const navbar = mixins.getById("navbar");
+  const article = mixins.getById("home");
+  navbar.classList.remove("opacity-none");
+  article.classList.remove("blur");
+}); */
 
 export { redirectToDetail, renderDetail };
