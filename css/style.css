@@ -2,6 +2,7 @@
 @import './navbar.css';
 @import './figure.css';
 @import './modal.css';
+@import './detail.css';
 
 body {
   position: relative;

@@ -61,16 +61,6 @@ const mixins = {
     }
   },
 
-  renderCharacters: function(charactersArray, sectionContainer = "home-page") {
-    charactersArray.forEach((element, index) => {
-      const container = this.getById(sectionContainer).children[index];
-      container.setAttribute("id", element.id);
-      container.children[0].src = element.image;
-      container.children[0].alt = element.name + " image";
-      container.children[1].innerHTML = element.name;
-    });
-  },
-
   setActiveLink: function(link) {
     let linksUl = this.getById("nav-links");
     for (let i = 0; i < linksUl.childElementCount; i++) {

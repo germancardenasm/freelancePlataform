@@ -1,23 +1,17 @@
-/* 
-import {} from '../../js/detail.js' */
+import { renderDetail } from "../js/detail.js";
 
 const detail = {
   render: async () => {
     let view = `
-          <div class="detail-page" id="detail-page">
-            <div id='detail-page-title' class='page-title line-down'><h3 class='display-5'>Character Information</h3>
-            </div>
-            <div id="detail-container-page" class="detail-container-page">
-              <div id="detail-character-container"  class="character-container">
-                <img class="character-image detail" src="../img/dummyImg.png" alt="" />
-                <div class="name-container d-none"></div>
+          
+          <div class="detail px-4" id="detail">
+            <h1 class=" my-0 px-4 text-capitalize" id="name"></h1>
+            <div class="detail-container container-fluid px-4 d-flex flex-row justify-content-center justify-content-sm-around flex-column flex-sm-row"> 
+              <div id="photo-container"  class="photo-container my-4">
+                <img id="photo" class="photo" src="../img/dummyImg.png" alt="" />
               </div>
-              <div id="character-info-container" class="character-info">
-                <h4
-                  id="character-name-detail"
-                  class="character-name-detail px-1"
-                ></h4>
-                <table id="character-info-table" class="table"></table>
+              <div id="info-container" class="info-container my-sm-4">
+                <table id="table-info" class="table-info text-capitalize"></table>
               </div>
             </div>
           </div>

@@ -1,0 +1,59 @@
+.background.gradient {
+  background: linear-gradient(to bottom right, #CED3DC 0%, #5B616A 100%);
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.detail {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.detail h1 {
+  color: var(--secondary-color);
+}
+
+.detail .detail-container {
+  max-width: 600px;
+}
+
+.detail .photo {
+  display: block;
+  width: 150px;
+}
+
+.detail-container-page {
+  width: 90%;
+  color: var(--third-color);
+}
+
+.table-info {
+  color: var(--third-color);
+}
+
+.table-info .table-label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  width: 100px;
+}
+
+.table-info .info {
+  font-size: 1rem;
+  font-family: PT Sans Narrow;
+  padding: 0;
+}
+
+.table-info,
+.table-info>td,
+.table-info>th {
+
+  background: white;
+}
+
+.table-info>tr {
+  border-bottom: 2px solid var(--third-color);
+}
