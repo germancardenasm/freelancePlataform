@@ -44,3 +44,18 @@
   border-top: none;
   padding: 2rem 13%;
 }
+
+.modal .btn.btn-modal {
+  cursor: pointer;
+  color: white;
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.modal .btn.btn-modal:hover {
+  cursor: pointer;
+  color: var(--secondary-color);
+  background-color: white;
+  border-color: var(--secondary-color);
+
+}
