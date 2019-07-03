@@ -9,19 +9,22 @@ body {
   font-size: 14px;
   width: 100%;
   height: 100%;
+}
 
+.blockquote {
+  font-size: 1rem;
 }
 
 .blur {
-  -webkit-filter: blur(3px);
-  -moz-filter: blur(3px);
-  -o-filter: blur(3px);
-  -ms-filter: blur(3px);
-  filter: blur(3px);
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
 }
 
 .content-wrapper {
-  padding-top: 120px;
+  padding-top: 100px;
   transition: filter, ease-out, 0.5s;
   -webkit-filter: blur(0px);
   -moz-filter: blur(0px);
@@ -32,6 +35,7 @@ body {
 
 .page-wrapper .content-wrapper .main-title {
   padding: 0px;
+  font-size: 1.8rem;
 }
 
 .content-wrapper>article {

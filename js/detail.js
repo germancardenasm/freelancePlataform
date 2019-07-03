@@ -3,13 +3,16 @@ import modal from "../pages/modal.js";
 import config from "./config.js";
 
 const redirectToDetail = e => {
+  location.hash = "/detail";
+};
+
+const showModalDetail = e => {
   let personIdtoShowDetail = 0;
   if (!isPersonContainer(e)) return console.log("nop");
   personIdtoShowDetail = getPersonId(e);
   sessionStorage.setItem("idToShowDetail", personIdtoShowDetail);
   console.log("Person Id: ", personIdtoShowDetail);
-  renderDetail();
-  //location.hash = "/detail";
+  renderDetailModal();
 };
 
 const isPersonContainer = e => {
@@ -26,7 +29,7 @@ const getPersonId = e => {
   else return parseInt(e.target.parentElement.id);
 };
 
-async function renderDetail() {
+async function renderDetailModal() {
   //setActiveLink("none");
   const modal_wrapper = mixins.getById("detail_wrapper");
   const personIdtoShowDetail = await parseInt(
@@ -37,7 +40,7 @@ async function renderDetail() {
   let person = personList[personIdtoShowDetail];
   positionFigureVerticalyCentered(personIdtoShowDetail);
   modal_wrapper.innerHTML = modal(person);
-  addModalEventListener();
+
   setTimeout(() => {
     const navbar = mixins.getById("navbar");
     const article = mixins.getById("home");
@@ -45,12 +48,15 @@ async function renderDetail() {
     article.classList.add("blur");
     setModalTable(person);
     $("#detail_modal").modal("show");
+    addModalEventListener();
   }, 500);
 
   //renderCharacters(characterToRender, "detail-container-page");
 }
 
 const addModalEventListener = () => {
+  /* const moreDetailButton = mixins.getById("more_detail");
+  moreDetailButton.addEventListener("clic", redirectToDetail); */
   $("#detail_modal").on("hidden.bs.modal", function(e) {
     const navbar = mixins.getById("navbar");
     const article = mixins.getById("home");
@@ -94,11 +100,4 @@ const setModalTable = async person => {
   });
 };
 
-/* $("#myModal").on("hidden.bs.modal", function(e) {
-  const navbar = mixins.getById("navbar");
-  const article = mixins.getById("home");
-  navbar.classList.remove("opacity-none");
-  article.classList.remove("blur");
-}); */
-
-export { redirectToDetail, renderDetail };
+export { showModalDetail, redirectToDetail };
