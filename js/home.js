@@ -114,7 +114,7 @@ const renderDetailModal = async () => {
   positionFigureVerticalyCentered(personIdtoShowDetail);
   modal_wrapper.innerHTML = modal(person);
   setModalTable(person);
-  blur("set");
+  blur("add");
   setTimeout(() => {
     $("#detail_modal").modal("show");
     addModalEventListener();

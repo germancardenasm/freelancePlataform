@@ -4,7 +4,7 @@ const home = {
   render: async () => {
     let view = `
       <article id="home" >
-        <h1 class="main-title">Top Developer Freelancers</h1>
+        <h1 class="main-title">Top Employees</h1>
         <blockquote class="blockquote px-1 mt-1  text-left">
             <p class="mb-0">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, 

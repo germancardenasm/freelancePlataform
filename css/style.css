@@ -34,6 +34,10 @@ body {
   filter: blur(0px);
 }
 
+.content-wrapper .main-title {
+  color: var(--secondary-color);
+}
+
 .page-wrapper .content-wrapper .main-title {
   padding: 0px;
   font-size: 1.8rem;
