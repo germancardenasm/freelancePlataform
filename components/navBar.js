@@ -1,7 +1,7 @@
 const navBar = {
   render: async () => {
     let view = `
-      <nav id = "navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+      <nav id = "navbar" class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
         <a class="navbar-brand logo" href="#">
           <img src="./img/logo.png" class="d-inline-block align-top" alt="" />
         </a>
@@ -25,10 +25,10 @@ const navBar = {
               >
             </li>
             <li id="detail-link"class="nav-item">
-              <a class="nav-link custom-link" href="/#/detail">Detalle</a>
+              <a class="nav-link custom-link disabled" href="/#/detail">Detalle</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
+          <!-- <form class="form-inline my-2 my-lg-0">
             <input
               class="form-control mr-sm-2"
               type="search"
@@ -41,8 +41,8 @@ const navBar = {
             >
               Search
             </button>
-          </form>
-        </div>
+          </form> -->
+        </div> 
       </nav>
       `;
     return view;
