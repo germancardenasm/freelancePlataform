@@ -7,7 +7,7 @@ const redirectToDetail = e => {
 };
 
 async function renderDetail() {
-  //setActiveLink("none");
+  mixins.setActiveLink("detail-link");
   const personToShowDetail = await JSON.parse(
     sessionStorage.getItem("personToShowDetail")
   );
@@ -16,7 +16,6 @@ async function renderDetail() {
 
 const renderPersonDetail = person => {
   const table = mixins.getById("table-info");
-  const characterName = mixins.getById("name");
   const photo = mixins.getById("photo");
   const country = JSON.parse(sessionStorage.getItem("personCountry"));
   const labels = {
@@ -24,14 +23,13 @@ const renderPersonDetail = person => {
     age: person.dob.age,
     email: person.email,
     phone: person.phone,
-    cellphone: person.cell,
+    cell: person.cell,
     addres: person.location.street,
-    zipCode: person.location.postcode,
+    zip: person.location.postcode,
     city: person.location.city,
     country: country.name
   };
   photo.src = person.picture.large;
-  characterName.innerHTML = labels.name;
   Object.keys(labels).forEach((element, index) => {
     let row = table.insertRow(index);
     let cellLabel = row.insertCell(0);

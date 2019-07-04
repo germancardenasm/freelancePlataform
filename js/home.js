@@ -29,6 +29,7 @@ const renderHome = async () => {
   );
   setNewFiguresInfo(dataFromServer.results);
   addHomeListeners();
+  mixins.setActiveLink("home-link");
 };
 
 const reqDataServer = async (qtyCharacters = 1) => {
@@ -107,7 +108,6 @@ const renderDetailModal = async () => {
   const personIdtoShowDetail = await parseInt(
     sessionStorage.getItem("idToShowDetail")
   );
-  console.log("Person Id to show detail: ", personIdtoShowDetail);
   let personList = await JSON.parse(sessionStorage.getItem("charactersObject"));
   let person = personList[personIdtoShowDetail];
   sessionStorage.setItem("personToShowDetail", JSON.stringify(person));

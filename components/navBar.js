@@ -17,19 +17,14 @@ const navBar = {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <a class="navbar-brand" href="#">Dev Freelancers</a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
+          <a class="navbar-brand" href="#">Flobant</a>
+          <ul id="nav-links" class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li id="home-link" class="nav-item active">
               <a class="nav-link custom-link" href="/#/home"
                 >Home <span class="sr-only">(current)</span></a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link custom-link" href="/#/developers"
-                >Desarroladores</a
-              >
-            </li>
-            <li class="nav-item">
+            <li id="detail-link"class="nav-item">
               <a class="nav-link custom-link" href="/#/detail">Detalle</a>
             </li>
           </ul>
