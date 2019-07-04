@@ -8,12 +8,18 @@ const QTY_HOME = config.QTY_HOME;
 let previousLastId = 0;
 let nextFigureId = 0;
 let isLoadingMorePeople = false;
+let preventScrollListener = false;
 
 const redirectToHome = () => {
   location.hash = "/home";
 };
 
 const renderHome = async () => {
+  previousLastId = 0;
+  preventScrollListener = false;
+  sessionStorage.setItem("idToShowDetail", 0);
+  sessionStorage.setItem("personToShowDetail", JSON.stringify({}));
+  sessionStorage.setItem("personCountry", JSON.stringify({}));
   const dataFromServer = await reqDataServer(QTY_HOME);
   mixins.saveCharacters(dataFromServer.results);
   nextFigureId = mixins.renderPeoleFigures(
@@ -104,7 +110,6 @@ const renderDetailModal = async () => {
   console.log("Person Id to show detail: ", personIdtoShowDetail);
   let personList = await JSON.parse(sessionStorage.getItem("charactersObject"));
   let person = personList[personIdtoShowDetail];
-
   sessionStorage.setItem("personToShowDetail", JSON.stringify(person));
   positionFigureVerticalyCentered(personIdtoShowDetail);
   modal_wrapper.innerHTML = modal(person);
@@ -118,17 +123,24 @@ const renderDetailModal = async () => {
 
 const addModalEventListener = () => {
   const moreDetailButton = mixins.getById("more_detail");
-  moreDetailButton.addEventListener("click", redirectToDetail);
+  moreDetailButton.addEventListener("click", prepareRedirectionToDetail);
   $("#detail_modal").on("hidden.bs.modal", function(e) {
-    if (mixins.parseRequestURL() === "/home") blur("remove");
-    window.addEventListener("scroll", loadMorePersons);
+    if (!preventScrollListener) {
+      blur("remove");
+      window.addEventListener("scroll", loadMorePersons);
+    }
   });
+};
+
+const prepareRedirectionToDetail = () => {
+  preventScrollListener = true;
+  redirectToDetail();
 };
 
 const blur = option => {
   const navbar = mixins.getById("navbar");
   const article = mixins.getById("home");
-  if (option === "set") {
+  if (option === "add") {
     navbar.classList.add("opacity-none");
     article.classList.add("blur");
   } else if (option === "remove") {
